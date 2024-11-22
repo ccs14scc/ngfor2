@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <h1>Formulario Reactivo</h1>
+      <div class="col-md-12">
+        <form [formGroup]="formularioForm" (ngSubmit)="enviarDatos()">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control"  
+                formControlName="nombre" id="nombre" 
+                aria-describedby="nombrelHelp" 
+                placeholder="Ingrese Nombre">
+              <small class="form-text text-muted">Debe ingresar un nombre. No se aceptan símbolos.</small>
+            </div>
+            <div class="form-group">
+              <label for="apellido">Apellido</label>
+              <input type="text" class="form-control" 
+                formControlName="apellido" id="apellido" 
+                aria-describedby="apellidoHelp" 
+                placeholder="Ingrese Apellido">
+              <small id="apellidoHelp" class="form-text text-muted">Debe ingresar un nombre. No se aceptan símbolos.</small>
+            </div>
+            <button type="submit" class="btn btn-primary" >Enviar</button>
+          </form>
+      </div>
+    </div>
+  </div>
