@@ -1,20 +1,36 @@
-<div class="container">
-    <div class="rom">
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Campo1</th>
-                <th scope="col">Campo2</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let item of registros">
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
-</div>
+<h2 class="mt-4">Formulario para agregar nuevo registro</h2>
+
+<!-- Formulario reactivo -->
+<form [formGroup]="formulario" (ngSubmit)="guardarDatos()">
+  <div class="form-group">
+    <label for="campo1">Campo 1</label>
+    <input id="campo1" class="form-control" formControlName="campo1" placeholder="Ingrese el campo1" />
+  </div>
+
+  <div class="form-group">
+    <label for="campo2">Campo 2</label>
+    <input id="campo2" class="form-control" formControlName="campo2" placeholder="Ingrese el campo2" />
+  </div>
+
+  <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+</form>
+
+<h2 class="mt-4">Registros</h2>
+<table class="table table-striped mt-3">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Campo 1</th>
+      <th>Campo 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let registro of registros">
+      <td>{{ registro._id }}</td>  <!-- Mostrar el _id del registro -->
+      <td>{{ registro.campo1 }}</td> <!-- Mostrar el campo1 -->
+      <td>{{ registro.campo2 }}</td> <!-- Mostrar el campo2 -->
+    </tr>
+  </tbody>
+</table>
+
+
